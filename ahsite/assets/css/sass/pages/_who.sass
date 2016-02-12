@@ -1,0 +1,174 @@
+.who
+	#wrap-container
+		background: whitesmoke
+		color: $main
+
+	a
+		color: $main
+
+	.whois-video
+		width: 100%
+		height: 500px
+		overflow: hidden
+		position: relative
+
+		@include breakpoint("large")
+			height: auto
+
+	.message-wrap
+		position: absolute
+		bottom: 0
+		width: 100%
+		@include breakpoint("medium")
+			text-align: center
+
+		.message
+			padding: 2%
+			margin-bottom: 5%
+			border: 1px solid white
+			font-size: 4em
+			color: white
+			display: inline-block
+
+			@include breakpoint("medium")
+				margin-bottom: 17.5%
+				font-size: 3em
+
+			@include breakpoint("narrow")
+				font-size: 2.5em
+
+	.who-welcome
+		position: relative
+		padding: 45px 0
+
+		.blurb
+			font-weight: 100
+			letter-spacing: 1px
+			line-height: 150%
+			font-size: 170%
+			width: 72%
+			position: relative
+			z-index: 5
+
+			@include breakpoint("medium")
+				width: 100%
+				text-align: center
+
+		.who-headshot
+			background: url(../../images/headshot_est.png) 50% 40%
+			background-size: cover
+			position: absolute
+			z-index: 0
+			top: -25px
+			right: -80px
+			width: 300px
+			height: 300px
+			border: 10px solid white
+			@include curve(50%)
+
+			@include breakpoint("medium")
+				position: relative
+				top: 0
+				right: 0
+				margin: -100px auto 0
+				width: 250px
+				height: 250px
+
+	.cv
+		padding: 0 5%
+
+		.cv-list
+			list-style-type: none
+			margin: 0
+			padding: 0
+			overflow: hidden
+
+			li
+				width: 27%
+				margin: 0 6% 5% 0
+				float: left
+
+				@include breakpoint("medium")
+					width: 85%
+					padding: 10px 0
+
+	.clear
+		clear: both
+
+	.container
+		position: relative
+
+	.role-describe
+		margin: 0 0 10px
+		font-size: 130%
+
+	.role-twitter-link
+		margin: 0
+		font-size: 125%
+
+	h3
+		font-size: 125%
+		padding-top: 0
+
+	.academics
+		background: white
+		padding: 5%
+		margin: 5% 0 0
+
+
+		.edu-list
+			list-style-type: none
+			overflow: hidden
+			margin: 0
+			padding: 0
+
+		.edu-partner
+			float: left
+			width: 45%
+			margin: 0 5% 5% 0
+
+			@include breakpoint("medium")
+				width: 90%
+
+			.institution
+				font-weight: bold
+				margin: 0
+				padding-bottom: 5px
+
+			.program
+				font-weight: 100
+				margin: 0
+
+			figure
+				overflow: hidden
+				margin: 0
+				width: 100%
+
+				img
+					float: left
+					width: 20%
+
+				figcaption
+					float: left
+					width: 75%
+					margin-left: 5%
+
+	.additional-who
+		background: url(../../images/food.png)
+		padding: 7.5% 0
+		color: whitesmoke
+		text-align: center
+		margin: -2.5% 0
+
+		ul
+			margin: 0
+			list-style-type: none
+
+			li
+				display: inline-block
+				padding: 2%
+				border: 1px dashed whitesmoke
+				font-size: 120%
+				margin-right: 2%
+				margin-bottom: 2%
+				@include curve( 5px )

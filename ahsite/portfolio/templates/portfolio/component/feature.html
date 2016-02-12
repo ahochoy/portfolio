@@ -1,0 +1,13 @@
+{% if p.featured_images.0.image.url%}
+<a id="feature-{{forloop.counter0}}" class="feature-project with-grade" href="{{ p.get_absolute_url}}">
+	<img class="project-image" src="{{p.featured_images.0.image.url}}" >
+{% else %}
+<a id="feature-{{forloop.counter0}}" class="feature-project" href="{{ p.get_absolute_url}}" style="background:#{{p.hex_color}};">
+{% endif %}
+	<div class="project-details">
+		<div class="details-screen"></div>
+		<p class="details-eyebrow">{{p.type}}.</p>
+		<p class="details-title cardo">{{p.title}}</p>
+		<p class="details-sub">{{p.subtitle}}</p>
+	</div>
+</a>

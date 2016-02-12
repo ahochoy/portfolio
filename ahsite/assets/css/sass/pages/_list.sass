@@ -1,0 +1,154 @@
+.projects.list.Work
+	#wrap-container
+		background: url(../../images/purp_feathers.png)
+		color: white
+
+		a
+			color: white
+
+	.list-more
+		color: $main
+		font-size: 125%
+
+		a
+			color: $accent !important
+
+			&:hover
+				color: whitesmoke
+
+	.pig-pen
+		pointer-events: none
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+
+	.bacon
+		position: absolute
+		z-index: 5
+
+		&.strip-one
+			left: 5%
+
+		&.strip-two
+			right: 15%
+
+		&.strip-three
+			left: 60%
+
+	.piggy-bank
+		position: absolute
+		width: 100%
+		z-index: 1
+
+	.monety
+		pointer-events: none
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+
+		.coin
+			position: absolute
+
+			&.gold
+				left: 25%
+
+			&.bronze
+				left: 70%
+
+			&.silver
+				left: 45%
+
+
+.projects.list.Writings
+	#wrap-container
+		background: #DFCF9C
+		color: whitesmoke
+
+		.list-hero
+			color: $accent
+
+			a
+				color: $accent
+
+	.to-medium-we-go
+		background: white
+		padding: 3.5%
+		margin-bottom: 25px
+		box-sizing: border-box
+		color: $main
+		@include curve(5px)
+
+		h2
+			padding: 0
+			margin: 0
+
+		p
+			font-size: 125%
+
+		a
+			display: inline-block
+			padding: 15px 30px
+			margin: 30px 0 0
+			line-height: 30px
+			border: 1px solid $main
+			text-decoration: none
+			color: $main
+			@include curve(30px)
+
+			&:hover
+				color: $verde
+				border-color: $verde
+
+	.list-more
+		background: #DFCF9C
+		color: $accent
+
+		a
+			color: $accent
+
+
+.list-breadcrumbs
+	width: 90%
+	max-width: 1000px
+	margin: 100px auto
+	border-bottom: 1px solid whitesmoke
+	position: relative
+	height: 36px
+	color: whitesmoke
+
+.list-hero
+	text-align: center
+	color: white
+	margin: 5% 0
+	min-height: 100px
+
+	.iconmelon
+		width: 45%
+		max-width: 200px
+		max-height: 200px
+		margin: 3% auto .5%
+
+	h1
+		margin: 0
+		padding: 0
+
+	p
+		margin: 0
+		padding: 0
+
+.project-list
+	padding-bottom: 40px
+
+	& > ul
+		list-style: none
+		margin: 0
+		padding: 0
+
+.list-more
+	position: relative
+	z-index: 10
+	margin: 6% auto
+	padding: 0 7.5%
+	text-align: center

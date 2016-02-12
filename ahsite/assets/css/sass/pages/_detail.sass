@@ -1,0 +1,179 @@
+.project.detail 
+	#wrap-container
+		background: white
+		color: $main
+
+		a
+			color: $main
+			text-decoration: none
+			border-bottom: 1px dotted $main
+
+		blockquote
+			width: 60%
+			margin: 3% auto
+
+			p
+				text-align: center
+				font-size: 2em
+				line-height: 125%
+
+			small
+				display: block
+				text-align: right
+				color: $main
+				font-style: italic
+
+		.m-scooch-controls a
+			color: $main
+
+.dark-logo
+	.logo-name
+		color: $main !important
+
+#detail-hero
+	width: 100%
+
+	.no-image
+		height: 250px !important
+
+.twitter-hashtag-button
+	margin: 10px 10px 32px 0
+	padding: 1%
+	border: 1px solid $main !important
+	display: inline-block
+	@include curve(3px)
+	@include transition(all, .25s, ease, 0)
+
+	&:hover
+		background: $accent
+		border: 1px solid $accent !important
+		color: white !important
+
+.wrap-project
+	padding: 25px 0 100px
+
+.project-detail
+	min-height: 750px
+
+.project-eyebrow
+	margin: 0
+
+.project-title
+	padding: 1.5% 0 0
+	font-size: 3.5em
+
+.project-subtitle
+	font-size: 2em
+	color: lighten($main, 10%)
+	margin: 0
+	padding: 0 0 3.5%
+
+.project-meta
+	padding: 2.5%
+	width: 20%
+	float: right
+	margin: 2.5% 0 2.5% 2.5% 
+	text-align: right
+	background: whitesmoke
+	font-size: 85%
+
+	.meta-section-title
+		text-transform: uppercase
+		font-weight: bold
+		font-size: small
+		clear: both
+		padding: 20px 0 0
+		margin: 0
+
+	.meta-functions
+		list-style: none
+		margin: 0
+		padding: 0
+
+		.function-item
+			padding: 0
+			margin: 0
+			float: right
+			clear: both
+
+	.meta-stakeholders
+		list-style: none
+		margin: 0
+		padding: 0
+
+		.stakeholder-item
+			margin: 0
+			padding: 0
+
+			a
+				text-decoration: none
+				color: $main
+
+	.meta-awards
+		margin: 0
+
+		.award-name
+			a
+				text-decoration: none
+				color: $main
+		
+		.awarder
+			font-style: italic
+			font-size: 90%
+			padding: 0
+			margin: 0
+
+	.meta-links
+		a
+			color: $main
+			text-decoration: none
+
+
+.project-content
+	padding: 25px 0
+	line-height: 200%
+	min-height: 500px
+
+.project-media
+	clear: both
+	width: 100%
+	margin: 25px auto
+
+	.media-video
+		padding: 25px 0
+		
+	.media-images
+		padding: 25px 0
+
+		figure
+			margin: 0
+			padding: 5px 0
+
+	.m-scooch-controls
+		a
+			text-decoration: none
+			color: black
+			font-size: small
+
+			&.m-active
+				color: #AAA
+	img
+		width: 100%
+		padding-bottom: 20px
+
+	.galleria
+		width: 100%
+		height: 600px
+		background: black
+
+@include breakpoint("medium")
+	.project-meta
+		width: 90%
+		padding: 5%
+
+@include breakpoint("narrow")
+	.project-title
+		font-size: 2em
+
+	.project-subtitle
+		font-size: 1.4em

@@ -1,0 +1,48 @@
+.list-item.essay
+	background: #0E1328
+	position: relative
+	display: block
+	width: 94%
+	padding: 7.5% 5%
+	@include curve(2px)
+	color: white
+	text-decoration: none
+	text-align: left
+	@include transition(background, .5s, ease, 0s)
+
+	.item-title
+		font-size: 2em
+		padding: 0
+		margin: 0
+		@include transition(color, .25s, ease, 0s)
+
+		&:hover
+			color: $accent
+
+	.item-subtitle
+		font-size: 1.1em
+		margin: 0 0 2%
+		padding: 0
+
+	.item-topics
+		font-size: 90%
+		color: #AAA
+		margin: 0
+		padding: 0
+
+	.meta-date
+		font-size: 70%
+		color: #AAA
+		font-weight: 100
+		padding: 1% 0
+		margin: 0
+
+	&:hover
+		background: darken(#0E1328, 2%)
+
+	@include breakpoint("narrow")
+		
+		padding: 12.5% 5%
+
+		.item-title
+			font-size: 1.5em

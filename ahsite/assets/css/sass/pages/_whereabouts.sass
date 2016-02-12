@@ -1,0 +1,94 @@
+.where
+
+	.current-locale
+		margin-bottom: 15%
+
+		.waypoint
+			float: left
+			width: 25%
+			margin-left: 15%
+
+			@include breakpoint("narrow")
+				width: 50%
+				margin: 0 25%
+
+		.text-side
+			float: left
+			width: 35%
+			margin: 5%
+
+			.side-intro
+				font-size: 1.4em
+				font-weight: 100
+
+			@include breakpoint("narrow")
+				width: 90%
+				text-align: center
+
+
+	#wrap-container
+		@include lgb(#1bb580, $royal)
+
+	.page-title
+		text-align: center
+
+	.map
+		clear: left
+		margin-top: 5%
+
+		@include breakpoint("narrow")
+			display: none
+
+	.where-social
+		width: 100%
+		margin: -25px 0 0
+		padding: 0
+
+		.social-tile
+			display: block
+			margin: 0
+			padding: 0
+			text-align: center
+			line-height: 450px
+			width: 50%
+			height: 450px
+			float: left
+			font-size: 2em
+			border-bottom: none
+
+			@include breakpoint("narrow")
+				width: 100%
+				height: 250px
+				line-height: 250px
+
+		.twitter-tile
+			background: #00aced
+
+			&:hover
+				background: darken(#00aced, 5%)
+
+		.linkedin-tile
+			background: #007bb6
+
+			&:hover
+				background: darken(#007bb6, 5%)
+
+		.tumblr-tile
+			background: #32506d
+
+			&:hover
+				background: darken(#32506d, 5%)
+
+		.google-tile
+			background: #dd4b39
+
+			&:hover
+				background: darken(#dd4b39, 5%)
+
+	.mailchimp-capture
+		top: -25px
+		clear: both
+		color: $main
+
+	.page-content
+		padding-bottom: 0

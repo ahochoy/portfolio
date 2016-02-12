@@ -1,0 +1,68 @@
+.mailchimp-capture
+	background: whitesmoke
+	position: relative
+	z-index: 100
+
+#mc_embed_signup
+	padding: 5%
+	width: 90%
+
+	h2
+		font-weight: 100
+		letter-spacing: -1px
+		padding: 0
+		margin: 0 0 15px
+		font-size: 200%
+
+	p
+		padding: 0
+		margin: 45px 0
+		max-width: 75%
+		font-size: 125%
+
+	.mc-field-group
+		font-size: 115%
+
+#mce-EMAIL
+	background: none
+	border: none
+	border-bottom: 1px solid #888
+	padding: 10px
+	font-weight: 100
+	font-size: 110%
+	min-width: 45%
+	font-family: 'Open Sans'
+
+#mc-embedded-subscribe
+	background: $main
+	padding: 15px 40px
+	margin-left: 10px
+	border: none
+	color: white
+	font-weight: 100
+	font-size: 110%
+	font-family: 'Open Sans'
+
+	@include curve(3px)
+
+#powered
+	padding-top: 30px
+	font-size: 85% !important
+
+	a
+		color: black
+
+@include breakpoint("medium")
+	.mailchimp-capture
+		text-align: center
+		margin-top: -25px !important
+
+	#mc-embedded-subscribe
+		margin-top: 7.5%
+
+	#mc_embed_signup
+		p
+			max-width: 100%
+
+	#mce-EMAIL
+		text-align: center

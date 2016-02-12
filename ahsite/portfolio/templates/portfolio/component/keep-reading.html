@@ -1,0 +1,11 @@
+{% for rp in related_projects %}
+<a class="keep-reading" href="{{rp.get_absolute_url}}">
+	KEEP READING
+	<span class="cardo">{{rp.title}}</span>
+</a>
+{% empty %}
+<a class="keep-reading" href="{% url 'writings' %}">
+	KEEP READING
+	<span class="cardo">The Archive.</span>
+</a>
+{% endfor %}

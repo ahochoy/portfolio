@@ -1,0 +1,113 @@
+.feature-project
+	display: block
+	text-decoration: none
+	position: relative
+	width: 93%
+	margin: 0 auto 4%
+	color: white
+	min-height: 225px
+	background: lighten($main, 10%)
+
+	.project-details .details-screen
+		height: 0%
+		@include transition(height, .5s, ease-out, 0s)
+
+	&.with-grade .project-details
+		@include lgb(rgba(0,0,0,0), rgba(0,0,0,1))
+
+		.details-sub
+			color: #A0A0A0
+
+	&:hover
+		.project-details
+			color: whitesmoke
+
+			.details-screen
+				height: 100%
+
+.project-image
+	background: $main
+	width: 100%
+	@include transition(all, .5s, ease, 0s)
+
+.project-details
+	width: 90%
+	padding: 2% 5% 7%
+	position: absolute
+	text-align: center
+	left: 0
+	bottom: 0
+	overflow: hidden
+
+	.details-eyebrow
+		font-weight: 100
+		font-size: small
+		z-index: 1
+		position: relative
+
+	.details-title
+		font-size: 2.5em
+		margin: 0
+		z-index: 1
+		position: relative
+
+	.details-sub
+		color: whitesmoke
+		font-size: 1.25em
+		margin: 0
+		z-index: 1
+		position: relative
+	
+	.details-screen
+		width: 102.5%
+		background: $main
+		opacity: .9
+		position: absolute
+		bottom: 0
+		left: -2.5%
+		z-index: 0
+
+.project-action
+	width: 15%
+	height: 200px
+	background: black
+	position: absolute
+	right: 0
+	bottom: 0
+	overflow: hidden
+
+	p
+		margin: 0
+		line-height: 150px
+		color: white
+		font-size: 1.5em
+		text-align: center
+		position: relative
+		z-index: 1
+
+	.action-screen
+		opacity: .8
+		height: 100%
+		width: 0
+		background: lighten($main, 5%)
+		position: absolute
+		top: 0
+		left: -33%
+		z-index: 0
+		@include transition(all, .75s, ease-out, .5s)
+		@include skewX(30deg)
+
+@include breakpoint("medium")
+	.project-details
+		.details-title
+			font-size: 1.5em !important
+
+@include breakpoint("narrow")
+	.project-details
+		.details-screen
+			height: 100% !important
+			
+		.details-sub
+			display: none
+
+

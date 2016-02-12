@@ -1,0 +1,117 @@
+{% extends "base_layout.html" %}
+{% load staticfiles %}
+
+{% block title %} Who Is | Andrew HoChoy{% endblock %}
+{% block meta-tags %}
+{% endblock %}
+{% block body-attr %}content who{% endblock %}
+{% block content-hero %}
+<section class="whois-video">
+	<div class="message-wrap"><div class="wrapper">
+		<span class="message cardo"> Who is &amp;rew?</span>
+	</div></div>
+	<video width="100%" autoplay loop>
+		<source src="{% static 'video/wave.mp4' %}" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+</section>
+<div class="wrapper">
+	<section class="who-welcome">
+		<div class="who-headshot"></div>
+		<p class="blurb">Sometimes, all you need is a change of perspective. I've travelled to some faraway places and have worked with some brilliant minds.  I have an eye for quality and an appetite for tackling challenging projects.</p>
+	</section>
+</div>
+{% endblock %}
+{% block content-attr %}who-content{% endblock %}
+{% block content-body %}
+<section class="who-details wrapper">
+	<div class="clear container cv">
+		<h3>Abbreviated CV.</h3>
+		<ul class="cv-list">
+			<li>
+				<p class="role-describe">Product Growth, Software Engineering</p>
+				<a href="http://www.meetearnest.com" class="role-twitter-link cardo">@MeetEarnest</a>
+			</li>
+			<li>
+				<p class="role-describe">Technology Consulting, Community Engagement</p>
+				<p class="role-twitter-link cardo">@ThoughtWorks</p>
+			</li>
+			<li>
+				<p class="role-describe">Product Quality, Test Engineering</p>
+				<p class="role-twitter-link cardo">@HugeInc</p>
+			</li>
+			<li>
+				<p class="role-describe">Product Quality, User Experience</p>
+				<p class="role-twitter-link cardo">@Onswipe</p>
+			</li>
+			<li>
+				<p class="role-describe">Agile Software Test Engineering</p>
+				<p class="role-twitter-link cardo">@UltiPRO</p>
+			</li>
+			<li>
+				<p class="role-describe">Web Developent, Flash Development</p>
+				<p class="role-twitter-link cardo">@ConstantClick</p>
+			</li>
+			<li>
+				<p class="role-describe">Art Direction, Graphic Design</p>
+				<p class="role-twitter-link cardo">@Virsocom</p>
+			</li>
+			<li>
+				<p class="role-describe">Marketing, Social Media, Event Planning</p>
+				<p class="role-twitter-link cardo">@PG / @MrY</p>
+			</li>
+			<li>
+				<p class="role-describe">Social Media, Community Engagement</p>
+				<p class="role-twitter-link cardo">@FIU</p>
+			</li>
+			<li>
+				<p class="role-describe">Web Development, Digital Media &amp; Design</p>
+				<p class="role-twitter-link cardo">#Freelance</p>
+			</li>
+		</ul>
+	</div>
+	<div class="academics container clear">
+		<h3>Academics.</h3>
+		<ul class="edu-list">
+			<li class="edu-partner">
+				<figure>
+					<img src="{% static 'images/edu/fiu.png' %}" alt="FIU Logo">
+					<figcaption>
+						<p class="institution">Florida International University</p>
+						<p class="program">B.S. '12 - Computer Science</p></figcaption>
+				</figure>
+			</li>
+			<li class="edu-partner">
+				<figure>
+					<img src="{% static 'images/edu/cu.png' %}" alt="Cornell Logo">
+					<figcaption><p class="institution">Cornell University</p>
+						<p class="program">Information Science, Systems and Technology</p></figcaption>
+				</figure>
+			</li>
+			<li class="edu-partner">
+				<figure>
+					<img src="{% static 'images/edu/hbx.png' %}" alt="HBX Logo">
+					<figcaption><p class="institution">HBX | Harvard Business School</p>
+						<p class="program">CORe '15 - Business Analytics, Economics for Managers, and Financial Accounting</p></figcaption>
+				</figure>
+			</li>
+		</ul>
+	</div>
+</section>
+<div class="additional-who">
+	<div class="container clear wrapper">
+		<h3>Activities &amp; Associations.</h3>
+		<ul>
+			<li>National Society of Black Engineers</li>
+			<li>Alpha Kappa Psi</li>
+			<li>iMentor</li>
+			<li>Association of Computing Machinery</li>
+			<li>Leadershape</li>
+			<li>Hackers Brunch Club</li>
+		</ul>
+	</div>
+</div>
+<section class="mailchimp-capture wrapper inverted">
+	{% include "mailchimp.html" %}
+</section>
+{% endblock %}

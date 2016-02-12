@@ -1,0 +1,44 @@
+{% extends "base_layout.html" %}
+{% load staticfiles %}
+
+{% block title %} {{title}} | Andrew HoChoy {% endblock %}
+{% block meta-tags %}{% endblock %}
+{% block body-attr %}projects list {{title}}{% endblock %}
+{% block content-hero %}
+<div class="list-breadcrumbs">
+	<p class="breadcrumbs"><a class="crumb" href="/">Home</a> / <span class="crumb active">{{title}} - {{object_list|length}} Item{{ object_list|length|pluralize:",s" }}</span></p>
+</div>
+<div class="list-hero">
+	<h1>{{title}}</h1>
+	<p class="cardo">{{quip}}</p>
+</div>
+{% endblock %}
+{% block content-attr %}project-list{% endblock %}
+{% block content-body %}
+	{% for p in object_list %}
+		{% include "portfolio/component/list-item.html" %}
+	{% endfor %}
+	{% ifequal title "Work" %}
+	<div class="pig-pen">
+		<img data-start="top[swing]:-55%;" data-end="top:110%;" class="bacon strip-one" src={% static "images/flying_bacon_1.png" %} alt="floating bacon"/>
+		<img data-start="top[swing]:-40%;" data-end="top:100%;" class="bacon strip-two" src={% static "images/flying_bacon_2.png" %} alt="floating bacon"/>
+		<img data-start="top[swing]:-22%;" data-end="top:150%;" class="bacon strip-three" src={% static "images/flying_bacon_3.png" %} alt="floating bacon"/>
+		<img data-625-end="bottom[quadratic]: -75%;" data-end="bottom: 0;" class="piggy-bank" src={% static "images/piggy_bank.png" %}  alt="piggy bank" />
+	</div>
+	<div class="monety">
+		<img data-300-start="top[swing]:-12%;" data-end="top:63%;" class="gold coin" src={% static "images/coin_1.png" %} alt="gold coin" />
+		<img data-500-start="top[swing]:-25%;" data-end="top:57%;" class="bronze coin" src={% static "images/coin_2.png" %} />
+		<img data-1000-start="top[swing]:-12%;" data-end="top:38%;" class="silver coin" src={% static "images/coin_3.png" %} />
+	</div>
+	{% endifequal %}
+	{% ifequal title "Writings" %}
+	<div class="wrapper to-medium-we-go">
+		<h2><img src={% static "images/emoji_medium_title.png"%} alt="Essays and Insights on Medium.com Soon" /></h2>
+		<p>Check out more of my essays and insights, soon to be published on Medium.com</p>
+		<a href="https://medium.com/@ahochoy">Go to medium.com/@ahochoy &rarr;</a>
+	</div>
+	{% endifequal %}
+	<div class="list-more">
+		<p>More {{title|lower}} coming soon.  <a href="http://eepurl.com/P0HkX" target="_blank">Join the &amp;crew</a> to stay up to date.</p>
+	</div>
+{% endblock %}

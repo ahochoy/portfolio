@@ -1,0 +1,44 @@
+nav#wrap-nav
+	background: $main
+	max-width: $max_width
+	margin: 0 auto
+	height: $nav_height
+	position: relative
+
+	.about-links
+		color: #DDD
+		text-decoration: none
+		padding: 0
+		margin: 0
+		position: absolute
+		left: 0
+		bottom: 10px
+		font-size: small
+
+		a
+			color: #999
+			text-decoration: none
+
+
+	ul.menu
+		position: absolute
+		list-style: none
+		padding: 15px 0
+		margin: 0
+		left: 0
+		bottom: 25px
+		color: white
+		width: 100%
+
+		li
+			float: left
+			margin-right: 3%
+
+		li a
+			color: white
+			text-decoration: none
+			font-size: 140%
+			@include transition(all, .25s, ease-in, 0)
+
+			&:hover
+				color: tomato

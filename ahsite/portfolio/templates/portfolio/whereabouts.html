@@ -1,0 +1,35 @@
+{% extends "base_layout.html" %}
+{% load staticfiles %}
+
+{% block title %} Who Is | Andrew HoChoy{% endblock %}
+{% block meta-tags %}
+{% endblock %}
+{% block body-attr %}content where{% endblock %}
+{% block content-hero %}
+	<div class="page-breadcrumbs">
+		<p class="breadcrumbs"><a class="crumb" href="/">Home</a> / <a class="crumb active">Whereabouts</a></p>
+	</div>
+{% endblock %}
+{% block content-attr %}page-content{% endblock %}
+{% block content-body %}
+<h1 class="page-title cardo">Whereabouts</h1>
+	<div class="current-locale wrapper">
+		<img class="waypoint" src="{% static 'images/location.png' %}" alt="Waypoint Glyph">
+		<aside class="text-side">
+			<p class="side-intro">Building a modern bank for the next generation at <a href="http://www.meetearnest.com" target="_blank">Earnest</a>, in the City by the Bay.</p>
+		</aside>
+	</div>
+<div class="map wrapper">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100940.17087573676!2d-122.50781123707526!3d37.75767917416336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan+Francisco%2C+CA!5e0!3m2!1sen!2sus!4v1445724949467" width="1000" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+<div class="where-social">
+	<a class="social-tile cardo twitter-tile" title="@ahochoy" href="http://twitter.com/ahochoy" target="_blank">Twitter</a>
+	<a class="social-tile cardo linkedin-tile" href="http://www.linkedin.com/in/ahochoy" target="_blank">LinkedIn</a>
+	<a class="social-tile cardo tumblr-tile" href="http://ahochoy.tumblr.com" target="_blank">Tumblr</a>
+	<a class="social-tile cardo google-tile" href="https://plus.google.com/+AndrewHoChoy" target="_blank">Google+</a>
+</div>
+
+<section class="mailchimp-capture wrapper">
+	{% include "mailchimp.html" %}
+</section>
+{% endblock %}

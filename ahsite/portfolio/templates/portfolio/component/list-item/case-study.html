@@ -1,0 +1,70 @@
+<div id="list-item-{{forloop.counter0}}" class="list-item project">
+{% if p.images.all %}
+<section class="item-images">
+	<div class="m-scooch m-fluid m-scooch-photos">
+		<div class="media-images m-scooch-inner">
+			{% for i in p.images.all %}
+			<div id="image-{{forloop.counter0}}" class="image-item m-item">
+				<img src="{{i.image.url}}" alt="{{i.image.title}}" >
+				{% if i.image.caption %}<p>{{i.image.caption}}</p>{% endif %}
+			</div>
+			{% endfor %}
+		</div>
+		{% if p.images.all|length > 1 %}
+		<div class="m-scooch-controls m-scooch-bulleted">
+			<a href="#" data-m-slide="prev">Previous</a>
+			{% for i in p.images.all %}
+			<a href="#" data-m-slide="{{forloop.counter}}">{{forloop.counter}}</a>
+			{% endfor %}
+			<a href="#" data-m-slide="next">Next</a>
+		</div>
+		{% endif %}
+	</div>
+</section>
+{% endif %}
+<p class="item-title">{{p.title}}</p>
+{% spaceless %}
+<p class="item-meta">
+	{% if p.stakeholders.all and p.type == 'Work' %}
+	{% for s in p.stakeholders.all %}
+	<span class="meta-stakeholders">{{s.name}}</span>
+	{% endfor %}
+	&#59;&nbsp;
+	{% endif %}
+	<span class="meta-date">{{p.publish_date|date:"F Y"}}</span>
+</p>
+{% endspaceless %}
+{% if p.type == 'Essay' %}<p class="item-subtitle">{{p.subtitle}}</p>{% endif %}
+{% if p.type == 'Work' %}
+<ul class="item-functions">
+	{% for f in p.functions.all %}
+	<li id="function-{{forloop.counter0}}" class="function-item">{{f.name}}</li>
+	{% endfor %}
+</ul>
+<p class="item-section-title">Abstract</p>
+<div class="item-body cardo">{{p.body}}</div>
+{% endif %}
+{% if p.type == 'Essay' %}<a class="item-detail" href="{{p.get_absolute_url}}">Read the essay &rarr;</a>{% endif %}
+{% if p.related_projects.all and p.type == 'Work' %}
+<p class="item-section-title">Related Projects</p>
+<ul class="item-relatives">
+	{% for rp in p.related_projects.all %}
+	<li id="relative-{{forloop.counter0}}" class="relative-item">
+		{{rp.type}} - <a href="{{rp.get_absolute_url}}">{{rp.title}}</a>
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% if p.work_url or p.code_url %}
+<p class="item-section-title">Project Links</p>
+<div class="item-links">	
+	{% if p.work_url %}Work - <a class="link-work" href="{{p.work_url}}" target="_blank">{{p.work_url}}</a>{% endif %}
+	{% if p.code_url %}Code - <a class="link-code"href="{{p.code_url}}" target="_blank">{{p.code_url}}</a>{% endif %}
+</div>
+{% endif %}
+{% if p.video %}
+<section class="item-video">
+	<div class="video-wrap">{{p.video|safe}}</div>
+</section>
+{% endif %}
+</div>

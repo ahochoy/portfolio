@@ -1,0 +1,8 @@
+<a class="list-item-{{forloop.counter0}} list-item essay" href="{{p.get_absolute_url}}" >
+	<p class="meta-date">{{p.publish_date|date:"F Y"}}</p>
+	<p class="item-title cardo">{{p.title}}</p>
+	<p class="item-subtitle">{{p.subtitle}}</p>
+	{% spaceless %}
+	<p class="item-topics cardo"> Thoughts on {% for f in p.functions.all %}<span>{% if not forloop.first %}&#44;&#32;{% endif %}{{f.name}}</span>{% endfor %}</p>
+	{% endspaceless %}
+</a>

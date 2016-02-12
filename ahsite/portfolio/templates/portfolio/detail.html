@@ -1,0 +1,122 @@
+{% extends "base_layout.html" %}
+{% load staticfiles %}
+{% load project_extras %}
+
+{% block title %} {{project.title}} | Andrew HoChoy{% endblock %}
+{% block meta-tags %}
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ project.title }}" />
+<meta property="og:description" content="{{ project.rundown }}" />
+<meta property="og:image" content="{{ project.featured_images.0.image.url }}" />
+<meta property="og:url" content="{{ project.get_absolute_url }}" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ahochoy">
+<meta name="twitter:creator" content="@ahochoy">
+<meta name="twitter:title" content="{{ project.title }}">
+<meta name="twitter:description" content="{{ project.rundown }}">
+<meta name="twitter:image:src" content="{{ project.featured_images.0.image.url }}">
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-532de70a1247282d"></script>
+{% endblock %}
+{% block body-attr %}project detail dark-logo{% endblock %}
+{% block content-hero %}
+<div id="detail-hero" data-0="background-position:50% 75%;" data-1000="background-position:50% 25%;" style=
+	{% if project.featured_images.0.image.url %}
+	"background: url({{ project.featured_images.0.image.url }}) #{{project.hex_color}} no-repeat; background-size: cover;"
+	{% else %}
+	"background:#{{project.hex_color}}; background-size: cover; height: 250px !important; margin-bottom: -125px;"
+	{% endif %}>
+<div class="list-breadcrumbs">
+	<p class="breadcrumbs"><a class="crumb" href="/">Home</a> / 
+	{% if project.type == 'Essay' %}
+	<a class="crumb" href="{% url 'writings' %}">Writings</a> - 
+	{% else %}
+	<a class="crumb" href="{% url 'work' %}">Work</a> - 
+	{% endif %}
+	<span class="crumb active">{{project.title}}</span></p>
+</div>
+</div>
+{% endblock %}
+{% block content-attr %}project-detail{% endblock %}
+{% block content-body %}
+<article class="wrap-project wrapper" {% if not project.featured_images.0.image.url %} style="background: white; padding: 2.5%;"{% endif %}>
+{% for f in project.functions.all %}
+<a href="https://twitter.com/intent/tweet?button_hashtag={{f.name|strip}}&url={{project.title}}&text={{project.title}}&via=ahochoy" class="twitter-hashtag-button" target="_blank">Tweet <span class="cardo">#{{f.name|strip}}</span></a>
+{% endfor %}
+<p class="project-eyebrow">{{project.publish_date|date:"N Y"}} - {{project.type}}</p>
+<h1 class="project-title cardo">{{project.title}}</h1>
+<p class="project-subtitle cardo">{{project.subtitle}}</p>
+<aside class="project-meta">
+	<p class="meta-section-title">Topics</p>
+	<ul class="meta-functions">
+		{% for f in project.functions.all %}
+		<li class="function-item">{{ f.name }}</li>
+		{% endfor %}
+	</ul>
+	{% if project.stakeholders.all %}
+	<p class="meta-section-title">Stakeholders</p>
+	<ul class="meta-stakeholders">
+		{% for s in project.stakeholders.all %}
+		<li class="stakeholder-item">
+			{% if s.url %}
+			<a href="{{ s.url }}">{{ s.name }}</a>
+			{% else %}
+			<span>{{ s.name }}</span>
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% if project.awards.all %}
+	<p class="meta-section-title">Awards</p>
+	<dl class="meta-awards">
+		{% for a in project.awards.all %}
+		<dt class="award-name"><a href="{{ a.url }}">{{ a.name }}</a><dt>
+		<dd class="awarder">{{a.awarder}}</dd>
+		{% endfor %}
+	</dl>
+	{% endif %}
+	{% if project.work_url or project.code_url %}
+	<p class="meta-section-title">Links</p>
+	<div class="meta-links">
+	{% if project.work_url %}<a class="code-link" href="{{project.work_url}}" target="_blank">{{project.work_url}}</a>{% endif %}
+	{% if project.code_url %}<a class="code-link" href="{{project.code_url}}" target="_blank">{{project.code_url}}</a>{% endif %}
+	</div>
+	{% endif %}
+</aside>
+<section class="project-content">{{ project.body|safe }}</section>
+<div style="clear:both;"></div>
+{% if project.video or project.non_featured_images.all %}
+<section class="project-media">
+{% if project.video %}<div class="media-video">{{project.video|safe}}</div>{% endif %}
+{% if project.non_featured_images.all %}
+
+<div class="media-images">
+	{% for i in project.non_featured_images.all %}
+	<figure>
+		<img src="{{i.image.url}}" alt="{{i.image.title}}">
+		<figcaption>{{i.image.caption}}</figcaption>
+	</figure>
+	{% endfor %}
+</div>
+{% endif %}
+</section>
+{% endif %}
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ahochoy'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</article>
+{% if related_projects %}
+{% include "portfolio/component/keep-reading.html" %}
+{% endif %}
+{% endblock %}

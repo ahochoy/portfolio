@@ -1,0 +1,67 @@
+.action-tiles
+	height: 400px
+
+	.tile
+		display: block
+		color: white
+		text-decoration: none
+
+		&.small
+			width: 50%
+			height: 200px
+			float: left
+			line-height: 200px
+			text-align: center
+
+			&:hover
+				background: url(../../images/static.gif) 50% 50% no-repeat
+
+			img
+				vertical-align: middle
+
+		&.large
+			width: 50%
+			height: 350px
+			padding: 25px 5%
+			float: right
+
+	.tile-grid
+		width: 40%
+		height: 400px
+		float: left
+
+	.gplus
+		background: #dd4b39
+
+	.twitter
+		background: #00aced
+
+	.tumblr
+		background: #32506d
+
+	.linkedin
+		background: #007bb6
+
+	.work
+		background: #22B573
+
+		p
+			margin: 0
+			font-size: 2.2em
+			max-width: 85%
+
+		&:hover
+			background: url(../../images/bacon.gif) 50% 50% no-repeat
+			background-size: cover
+
+@include breakpoint("medium")
+	.action-tiles
+		.tile-grid
+			width: 100%
+			height: 200px
+
+		.tile
+			&.small
+				width: 25%
+			&.large
+				width: 90%

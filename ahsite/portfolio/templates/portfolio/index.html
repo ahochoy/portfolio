@@ -1,0 +1,47 @@
+{% extends "base_layout.html" %}
+{% load staticfiles %}
+
+{% block title %}Andrew HoChoy{% endblock %}
+{% block meta-tags %}{% endblock %}
+{% block body-attr %}index{% endblock %}
+{% block content-hero %}
+<div id="index-hero"></div>
+{% endblock %}
+{% block content-attr %}{% endblock %}
+{% block content-body %}
+<div class="desktop-background">
+<section id="browser" class="browser wrapper">
+	<div class="browser-window-bar">
+		<svg width="80" height="16">
+			<circle cx="8" cy="8" r="8" fill="#CF3636" ></circle>
+			<circle cx="40" cy="8" r="8" fill="#FFE236" ></circle>
+			<circle cx="72" cy="8" r="8" fill="#327A1C" ></circle>
+		</svg>
+	</div>
+	<div class="browser-body">
+		<div class="info-bar">
+			<p class="breadcrumbs"><a class="crumb active">Home</a></p>
+		</div>
+		<div class="feature-tiles">{% for p in featured_items %}{% include "portfolio/component/feature.html" %}{% endfor %}</div>
+		<div class="action-tiles">
+			{% include "portfolio/component/action-tiles.html" %}
+		</div>
+	</div>
+	<div class="browser-footer-bar"></div>
+</section>
+</div>
+<section class="whois-hero">
+	<div class="banner"></div>
+	<video width="100%" autoplay loop>
+		<source src="{% static 'video/wave.mp4' %}" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<div class="message">
+		<div class="message-screen"></div>
+		<a class="cardo" href="{% url 'page' 'who-is' %}">Who is &amp;rew?</a>
+	</div>
+</section>
+<section class="mailchimp-capture wrapper">
+	{% include "mailchimp.html" %}
+</section>
+{% endblock %}

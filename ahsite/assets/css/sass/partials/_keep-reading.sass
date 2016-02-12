@@ -1,0 +1,25 @@
+.keep-reading
+	padding: 8% 0
+	text-align: center
+	background: $main
+	margin-bottom: 40px
+	display: block
+	width: 100%
+	font-weight: 100
+	color: white !important
+
+	span
+		clear: both
+		font-weight: bold
+		font-size: 2.5em
+		margin: 0 auto
+		display: block
+		max-width: 1000px
+		width: 90%
+
+	&:hover
+		background: lighten($main, 3%)
+
+	@include breakpoint("narrow")
+		span
+			font-size: 1.6em

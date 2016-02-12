@@ -1,0 +1,7 @@
+{% if p.type == 'Essay' %}
+	{% include "portfolio/component/list-item/essay.html" %}
+{% elif p.type == 'Work' %}
+	{% include "portfolio/component/list-item/work.html" %}
+{% elif p.type == 'Case Study' %}
+	{% include "portfolio/component/list-item/case-study.html" %}
+{% endif %}

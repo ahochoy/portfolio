@@ -1,0 +1,104 @@
+#index-hero
+	width: 100%
+	height: 500px
+	background: black
+
+
+.desktop-background
+	background: url(../../images/concrete_wall.png)
+
+.browser
+	position: relative
+	top: -100px
+	z-index: 100
+	-webkit-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.25)
+
+	a.crumb
+		color: black !important
+
+	.browser-window-bar
+		height: 18px
+		padding: 15px
+		background: rgba(115, 115, 115, 0.75)
+		@include curve(5px 5px 0 0)
+
+	.browser-footer-bar
+		height: 20px
+		background: rgba(115, 115, 115, 0.75)
+		@include curve(0 0 5px 5px)
+	
+	.browser-body
+		background: white
+
+		.info-bar
+			padding: 25px 0
+			margin: 0 auto 40px
+			width: 93%
+			border-bottom: 1px solid #EEE
+			position: relative
+			height: 36px
+
+			&.announcement-display
+				display: block
+
+.whois-hero
+	margin-bottom: -300px
+	z-index: 85
+	position: relative
+	top: -200px
+	text-align: center
+
+	.message
+		position: absolute
+		top: 0
+		left: 0
+		text-align: center
+		width: 100%
+		height: 100%
+		padding: 0
+
+		a
+			display: inline-block
+			margin-top: 20%
+			padding: 2% 2% 1%
+			border: 1px solid white
+			font-size: 4em
+			color: white
+			text-decoration: none
+			@include transition(all, .25s, ease-out, 0s)
+
+			&:hover
+				border: 1px solid $main
+				background: $main
+
+	.banner
+		position: absolute
+		top: -400px
+		height: 400px
+		background: #FEDF00
+		width: 100%
+
+@include breakpoint("medium")
+	.whois-hero
+		top: 0
+		margin-bottom: 0
+		background: #FEDF00
+
+		video
+			visibility: hidden
+
+		.message a
+			background: $main
+			border: none
+			margin-top: 40%
+			font-size: 3em
+
+			&:hover
+				background: none
+				border: 1px solid $main
+				color: $main 
+
+		.banner
+			top: auto
+			z-index: -1
+

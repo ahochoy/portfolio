@@ -1,0 +1,20 @@
+db:
+    restart: always
+    image: postgres:latest
+    env_file: ./config/dev/db.env
+
+web:
+    restart: always
+    build: ./ahsite
+    volumes:
+        - /usr/src/www
+    command: uwsgi --ini uwsgi.ini
+    env_file: ./config/dev/web.env
+
+http:
+    restart: always
+    build: ./nginx
+    ports:
+        - "80:80"
+    volumes_from:
+        - web
