@@ -65,10 +65,6 @@
 	}
 
     var s = skrollr.init();
-    console.log(s);
-    var url ="/static/svg/icons.svg";
-    var c=new XMLHttpRequest(); c.open('GET', url, false); c.setRequestHeader('Content-Type', 'text/xml'); c.send();
-    document.body.insertBefore(c.responseXML.firstChild, document.body.firstChild)
 
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'ahochoy'; // required: replace example with your forum shortname
