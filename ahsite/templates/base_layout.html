@@ -38,13 +38,16 @@
         </div>
     </header>
     <main id="wrap-container">
-        {% block content-hero %}{% endblock %}
-        <div class="content-body {% block content-attr %}{% endblock %}">
-            {% block content-body %}{% endblock %}
+        {% block out-skrollr %}{% endblock %}
+        <div id="skrollr-body">
+            {% block content-hero %}{% endblock %}
+            <div class="content-body {% block content-attr %}{% endblock %}">
+                {% block content-body %}{% endblock %}
+            </div>
+            <footer>
+                <p class="wrapper"><a href="http://www.twitter.com/ahochoy">@ahochoy</a> &middot; <a href="/">www.andrewhochoy.com</a> &middot; &copy; 2015</p>
+            </footer>
         </div>
-        <footer>
-            <p class="wrapper"><a href="http://www.twitter.com/ahochoy">@ahochoy</a> &middot; <a href="/">www.andrewhochoy.com</a> &middot; &copy; 2015</p>
-        </footer>
     </main>
     {% javascript 'core' %}
 </body>

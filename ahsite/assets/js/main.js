@@ -39,6 +39,10 @@
 		$('.monety').height( windowHeight );
 		$('.page-content').css('min-height', windowHeight - 292);
 
+		if(window.location.pathname === '/work/'){
+			var s = skrollr.init();
+		}
+
 	});
 
 	[].slice.call( document.querySelectorAll( '.si-icons-default > .si-icon' ) ).forEach( function( el ) {

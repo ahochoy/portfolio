@@ -14,9 +14,8 @@
 </div>
 {% endblock %}
 {% block content-attr %}project-list{% endblock %}
-{% block content-body %}
+{% block out-skrollr %}
 	{% ifequal title "Work" %}
-	<script type="text/javascript">var s = skrollr.init();</script>
 	<div class="pig-pen">
 		<img data-start="top[swing]:-55%;" data-end="top:110%;" class="bacon strip-one" src={% static "images/flying_bacon_1.png" %} alt="floating bacon"/>
 		<img data-start="top[swing]:-40%;" data-end="top:100%;" class="bacon strip-two" src={% static "images/flying_bacon_2.png" %} alt="floating bacon"/>
@@ -29,6 +28,8 @@
 		<img data-1000-start="top[swing]:-35%;" data-end="top:38%;" class="silver coin" src={% static "images/coin_3.png" %} />
 	</div>
 	{% endifequal %}
+{% endblock %}
+{% block content-body %}
 	{% ifequal title "Writings" %}
 	<div class="wrapper to-medium-we-go">
 		<h2><img src={% static "images/emoji_medium_title.png"%} alt="Essays and Insights on Medium.com Soon" /></h2>
