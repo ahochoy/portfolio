@@ -64,7 +64,9 @@
 		});
 	}
 
-    var s = skrollr.init();
+	if(!document.createTouch) {
+    	var s = skrollr.init();
+	}
 
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'ahochoy'; // required: replace example with your forum shortname
