@@ -15,10 +15,8 @@
 {% endblock %}
 {% block content-attr %}project-list{% endblock %}
 {% block content-body %}
-	{% for p in object_list %}
-		{% include "portfolio/component/list-item.html" %}
-	{% endfor %}
 	{% ifequal title "Work" %}
+	<script type="text/javascript">var s = skrollr.init();</script>
 	<div class="pig-pen">
 		<img data-start="top[swing]:-55%;" data-end="top:110%;" class="bacon strip-one" src={% static "images/flying_bacon_1.png" %} alt="floating bacon"/>
 		<img data-start="top[swing]:-40%;" data-end="top:100%;" class="bacon strip-two" src={% static "images/flying_bacon_2.png" %} alt="floating bacon"/>
@@ -38,6 +36,9 @@
 		<a href="https://medium.com/@ahochoy">Go to medium.com/@ahochoy &rarr;</a>
 	</div>
 	{% endifequal %}
+	{% for p in object_list %}
+		{% include "portfolio/component/list-item.html" %}
+	{% endfor %}
 	<div class="list-more">
 		<p>More {{title|lower}} coming soon.  <a href="http://eepurl.com/P0HkX" target="_blank">Join the &amp;crew</a> to stay up to date.</p>
 	</div>

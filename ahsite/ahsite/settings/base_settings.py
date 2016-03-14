@@ -77,6 +77,17 @@ USE_L10N = True
 USE_TZ = True
 ########## END GENERAL CONFIGURATION
 
+########## EMAIL CONFIGURATION
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = getenv('EMAIL_HOST')
+EMAIL_HOST_PASSWORD = getenv('EMAIL_PASS')
+EMAIL_HOST_USER = getenv('EMAIL_USER')
+EMAIL_PORT = getenv('EMAIL_PORT')
+EMAIL_SUBJECT_PREFIX = '[%s] ' % SITE_NAME
+EMAIL_USE_TLS = True
+SERVER_EMAIL = EMAIL_HOST_USER
+########## END EMAIL CONFIGURATION
+
 ########## MEDIA CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
 MEDIA_ROOT = normpath(join(SITE_ROOT, 'media'))
