@@ -14,9 +14,9 @@
 			<p class="info-section-title">Awards</p>
 			{% for a in p.awards.all %}
 			{% if a.url %}
-			<a class="award-link" href="{{ a.url }}">{{ a.name }}</a>
+			<a class="award-link" href="{{ a.url }}" target="_blank">{{ a.name }} from {{ a.awarder }}</a>
 			{% else %}
-			{{ a.name }}
+			{{ a.name }} from {{ a.awarder }}
 			{% endif %}
 			{% endfor %}
 		</div>

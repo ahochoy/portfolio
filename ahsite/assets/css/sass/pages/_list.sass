@@ -16,6 +16,9 @@
 			&:hover
 				color: whitesmoke
 
+		@include breakpoint("narrow")
+			background: #5D3F74
+
 	.pig-pen
 		pointer-events: none
 		position: fixed
@@ -26,6 +29,9 @@
 	.bacon
 		position: absolute
 		z-index: 5
+
+		@include breakpoint("narrow")
+			@include scale( .7, .7)
 
 		&.strip-one
 			left: 5%
@@ -50,6 +56,9 @@
 
 		.coin
 			position: absolute
+
+			@include breakpoint("narrow")
+				@include scale( .7, .7)
 
 			&.gold
 				left: 20%
@@ -89,7 +98,7 @@
 
 		a
 			display: inline-block
-			padding: 15px 30px
+			padding: 15px
 			margin: 30px 0 0
 			line-height: 30px
 			border: 1px solid $main
@@ -108,9 +117,12 @@
 			@include breakpoint("narrow")
 				margin: 0
 
+		@include breakpoint("narrow")
+			text-align: center
+
 	.list-more
-		background: #DFCF9C
-		color: $accent
+		background: #32506D
+		color: white
 
 		a
 			color: $accent
@@ -156,11 +168,20 @@
 .list-more
 	position: relative
 	z-index: 10
-	margin: 6% auto
-	padding: 0 7.5%
+	margin: 0 auto
+	padding: 5% 7.5%
 	text-align: center
 
 	p img
 		width: 50px
 		vertical-align: bottom
 		padding: 0 10px
+
+		@include breakpoint("narrow")
+			display: block
+			margin: 0 auto
+
+	@include breakpoint("narrow")
+		display: block
+
+

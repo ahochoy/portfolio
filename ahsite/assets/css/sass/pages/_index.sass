@@ -65,6 +65,7 @@
 			font-size: 4em
 			color: white
 			text-decoration: none
+			box-sizing: border-box
 			@include transition(all, .25s, ease-out, 0s)
 
 			&:hover
@@ -76,6 +77,9 @@
 		top: -400px
 		height: 400px
 		background: #FEDF00
+		width: 100%
+
+	video
 		width: 100%
 
 @include breakpoint("medium")
@@ -102,4 +106,10 @@
 		.banner
 			top: auto
 			z-index: -1
+
+@include breakpoint("narrow")
+	.message a
+		width: 100%
+
+
 

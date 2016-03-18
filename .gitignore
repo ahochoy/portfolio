@@ -48,3 +48,6 @@ config/prod/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+*.crt
+*.key
