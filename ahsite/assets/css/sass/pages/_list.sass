@@ -84,7 +84,7 @@
 	.to-medium-we-go
 		background: white
 		padding: 3.5%
-		margin-bottom: 25px
+		margin-bottom: 5%
 		box-sizing: border-box
 		color: $main
 		@include curve(5px)
@@ -119,6 +119,10 @@
 
 		@include breakpoint("narrow")
 			text-align: center
+
+	.update-title
+		color: $main
+		text-align: center
 
 	.list-more
 		background: #32506D
@@ -181,7 +185,8 @@
 			display: block
 			margin: 0 auto
 
-	@include breakpoint("narrow")
-		display: block
+	a
+		@include breakpoint("narrow")
+			display: block
 
 

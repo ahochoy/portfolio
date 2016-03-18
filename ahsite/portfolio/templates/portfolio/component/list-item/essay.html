@@ -3,6 +3,6 @@
 	<p class="item-title cardo">{{p.title}}</p>
 	<p class="item-subtitle">{{p.subtitle}}</p>
 	{% spaceless %}
-	<p class="item-topics cardo"> Thoughts on {% for f in p.functions.all %}<span>{% if not forloop.first %}&#44;&#32;{% endif %}{{f.name}}</span>{% endfor %}</p>
+	<p class="item-topics">Re: {% for f in p.functions.all %}<span>{% if not forloop.first %}&#44;&#32;{% endif %}{{f.name}}</span>{% endfor %}</p>
 	{% endspaceless %}
 </a>
