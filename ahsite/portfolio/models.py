@@ -86,7 +86,7 @@ class ProjectImage(models.Model):
 	featured = models.BooleanField(default=None)
 
 	def __unicode__(self):
-		return self.image
+		return self.image.name
 
 class Page(models.Model):
 	title = models.CharField(max_length=100)
