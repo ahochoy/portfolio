@@ -12,7 +12,9 @@ django-tinymce==1.5.2
 futures==3.0.3
 jsmin==2.1.1
 psycopg2==2.6.1
+s3==3.0.0
 six==1.9.0
 sqlparse==0.1.15
 sass==2.3
 uwsgi==2.0.11
+PyRSS2Gen==1.0.0
