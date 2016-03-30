@@ -108,8 +108,6 @@ STATICFILES_DIRS = (
     normpath(join(SITE_ROOT, 'assets')),
 )
 
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -234,36 +232,35 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 ########## END APP CONFIGURATION
 
 ########## PIPELINE CONFIGURATION
-PIPELINE_COMPILERS = (
-  'pipeline.compilers.sass.SASSCompiler',
-)
-
-PIPELINE_CSS = {
-    'core': {
-        'source_filenames': (
-          'css/sass/style.sass',
-          'css/component.css'
-        ),
-        'output_filename': 'css/core.css',
-        'extra_context': {
-            'media': 'screen'
+PIPELINE = {
+    'PIPELINE_ENABLED': True,
+    'COMPILERS': (
+      'pipeline.compilers.sass.SASSCompiler',
+    ),
+    'STYLESHEETS': {
+        'core': {
+            'source_filenames': (
+              'css/sass/style.sass',
+              'css/component.css'
+            ),
+            'output_filename': 'css/core.css',
+            'extra_context': {
+                'media': 'screen'
+            },
         },
     },
+    'JAVASCRIPT': {
+        'core': {
+            'source_filenames': (
+              'js/vendor/*.js',
+              'js/main.js',
+            ),
+            'output_filename': 'js/core.js',
+        }
+    },
+    'CSS_COMPRESSOR': 'pipeline.compressors.cssmin.CssminCompressor',
+    'JS_COMPRESSOR': 'pipeline.compressors.jsmin.JSMinCompressor'
 }
-
-PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.cssmin.CssminCompressor'
-
-PIPELINE_JS = {
-    'core': {
-        'source_filenames': (
-          'js/vendor/*.js',
-          'js/main.js',
-        ),
-        'output_filename': 'js/core.js',
-    }
-}
-
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
 ########## END PIPELINE CONFIGURATION
 
 ########## TINYMCE CONFIGURATION

@@ -1,7 +1,5 @@
 from os.path import join, normpath, dirname
-from os import getenv
 from base_settings import *
-from configobj import ConfigObj
 from os import getenv
 from S3 import CallingFormat
 
@@ -20,7 +18,7 @@ AWS_HEADERS = {
 }
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'ahsite.settings.pipeline_storage.S3PipelineManifestStorage'
 ########## END STATIC/MEDIA FILES CONFIGURATION
 
 ########## DEBUG CONFIGURATION

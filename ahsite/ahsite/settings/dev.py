@@ -3,6 +3,10 @@ from os import getenv
 from base_settings import *
 from configobj import ConfigObj
 
+########## STATIC/MEDIA FILES CONFIGURATION
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+########## END STATIC/MEDIA FILES CONFIGURATION
+
 ########## DEBUG CONFIGURATION
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG

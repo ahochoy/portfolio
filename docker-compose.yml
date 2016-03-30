@@ -11,7 +11,7 @@ services:
         build: ./ahsite
         volumes:
             - /usr/src/www
-        command: uwsgi --ini uwsgi.ini
+        command: uwsgi --ini uwsgi.ini --honour-stdin
         env_file: ./config/dev/web.env
 
     http:
