@@ -3,6 +3,11 @@ from base_settings import *
 from os import getenv
 from S3 import CallingFormat
 
+########## DEBUG CONFIGURATION
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
+########## END DEBUG CONFIGURATION
+
 ########## MAINTENANCE MODE CONFIGURATION
 MAINTENANCE_MODE = False
 ########## END MAINTENANCE MODE CONFIGURATION
@@ -20,11 +25,6 @@ AWS_HEADERS = {
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'ahsite.settings.pipeline_storage.S3PipelineManifestStorage'
 ########## END STATIC/MEDIA FILES CONFIGURATION
-
-########## DEBUG CONFIGURATION
-DEBUG = False
-TEMPLATE_DEBUG = DEBUG
-########## END DEBUG CONFIGURATION
 
 ########## ALLOWED HOSTS CONFIGURATION
 ALLOWED_HOSTS = ['.andrewhochoy.com']

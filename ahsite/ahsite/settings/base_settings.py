@@ -233,7 +233,6 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 ########## PIPELINE CONFIGURATION
 PIPELINE = {
-    'PIPELINE_ENABLED': True,
     'COMPILERS': (
       'pipeline.compilers.sass.SASSCompiler',
     ),
