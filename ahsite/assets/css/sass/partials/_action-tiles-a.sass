@@ -5,6 +5,7 @@
 		display: block
 		color: white
 		text-decoration: none
+		position: relative
 
 		&.small
 			width: 50%
@@ -12,23 +13,48 @@
 			float: left
 			line-height: 200px
 			text-align: center
-
-			&:hover
-				background: url(../../images/static.gif) 50% 50% no-repeat
+			position: relative
+			z-index: 2
 
 			img
 				vertical-align: middle
 
+			&:hover
+				background: transparent
+
 		&.large
-			width: 50%
-			height: 350px
-			padding: 25px 5%
+			width: 60%
+			height: 400px
 			float: right
+
+			.tile-content
+				z-index: 2
+				background: #22B573
+				width: 100%
+				height: 100%
+				box-sizing: border-box
+				padding: 7%
+
+				&:hover
+					background: transparent
+
+
+		.tile-content
+			position: relative
+
+	.tile-gif-bg
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		z-index: 1
 
 	.tile-grid
 		width: 40%
 		height: 400px
 		float: left
+		position: relative
 
 	.gplus
 		background: #dd4b39
@@ -50,10 +76,6 @@
 			font-size: 2.2em
 			max-width: 85%
 
-		&:hover
-			background: url(../../images/bacon.gif) 50% 50% no-repeat
-			background-size: cover
-
 @include breakpoint("medium")
 	.action-tiles
 		.tile-grid
@@ -64,4 +86,4 @@
 			&.small
 				width: 25%
 			&.large
-				width: 90%
+				width: 100%

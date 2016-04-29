@@ -48,13 +48,13 @@ class Project(models.Model):
 		(ESSAY, 'Essay'),
 		(WORK, 'Work'),
 	)
-	stakeholders = models.ManyToManyField(Company, blank=True, null=True)
+	stakeholders = models.ManyToManyField(Company, blank=True)
 	body = HTMLField()
 	type = models.CharField(choices=PROJECT_TYPE_CHOICES, max_length=20, default=ESSAY)
 	rundown = models.TextField()
-	related_projects = models.ManyToManyField('self', blank=True, null=True)
+	related_projects = models.ManyToManyField('self', blank=True)
 	video = models.TextField(blank=True, null=True)
-	awards = models.ManyToManyField(Award, blank=True, null=True)
+	awards = models.ManyToManyField(Award, blank=True)
 	publish_date = models.DateField()
 	functions = models.ManyToManyField(Field)
 	title = models.CharField(max_length=100)

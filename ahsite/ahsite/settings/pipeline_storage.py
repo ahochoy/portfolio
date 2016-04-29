@@ -1,6 +1,7 @@
 from django.contrib.staticfiles.storage import ManifestFilesMixin
 from pipeline.storage import PipelineMixin
 from storages.backends.s3boto import S3BotoStorage
+from os import getenv
 import urllib
 from django.utils.six.moves.urllib.parse import (
     quote, urldefrag, urlsplit, urlunsplit,
@@ -12,6 +13,7 @@ class ManifestFilesMixinUrlEncoded(ManifestFilesMixin):
 		final_url = super(ManifestFilesMixinUrlEncoded, self).url(name, force)
 
 		urlparts = list(urlsplit(final_url))
+		urlparts[1] = getenv('AWS_CLOUDFRONT_URL')
 		url_queries = urlparts[3]
 		query_pairs = url_queries.split('&')
 

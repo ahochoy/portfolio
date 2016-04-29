@@ -7,8 +7,3 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 }
-
-/* Fallback for browsers that don't support SVG - Generated with http://iconizr.com/ */
-.no-svg .si-icon-hamburger { background-image: url('../images/hamburger.png') }
-
-/* alternatively you can define that there is no background image when SVG is supported instead of using .no-svg */

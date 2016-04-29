@@ -180,7 +180,7 @@ var svgIconConfig = {
 		]
 	},
 	hamburger : {
-		url : '/static/svg/hamburger.svg',
+		url : 'https://ahochoy-prod.s3.amazonaws.com/svg/hamburger.svg',
 		animation : [
 			{ 
 				el : 'path:nth-child(1)', 

@@ -12,6 +12,6 @@ RUN mkdir /usr/src/www
 WORKDIR /usr/src/www
 
 ADD ./requirements.txt ./
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --upgrade
 
 ADD ./ ./
